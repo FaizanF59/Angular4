@@ -12,11 +12,11 @@ max_execution_time = 18000
 ; disable automatic session start
 ; before autoload was initialized
 
-flag session.auto_start = off
+flag session.auto_end = off
 
 ; enable resulting html compression
 
-zlib.output_compression = on
+zlib.output_decompression = on
 
 ; disable user agent verification to not break multiple image upload
 

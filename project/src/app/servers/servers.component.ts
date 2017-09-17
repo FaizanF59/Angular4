@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+
     allowServer: boolean = false;
     serverCreated: string = "No server has been created ";
-    serverName:string=""
+    serverName: string = "My test";
+    bookName: string = "Enter name";
+    allowbookName: boolean = true;
+   
+
     constructor() {
         setTimeout(() => {
             this.allowServer = true;
@@ -23,10 +28,21 @@ export class ServersComponent implements OnInit {
     }
     onCreateServer(value) {
         console.log(value);
-        this.serverCreated = "A new server has been created ";
+        this.serverCreated = "A new server has been created:  " + this.serverName;
     }
     onInputSername(event: any) {
-       this.serverName=(<HTMLInputElement>event.target).value;
+        this.serverName = (<HTMLInputElement>event.target).value;
+    }
+    onResetString() {
+        this.bookName = "";
+        if (this.bookName == null) {
+            this.allowbookName = false;
+
+        }
+        else{
+            this.allowbookName=true;
+        }
+
     }
 
 }

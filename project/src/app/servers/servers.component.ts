@@ -14,7 +14,8 @@ export class ServersComponent implements OnInit {
     serverName: string = "My test";
     bookName: string = "Enter name";
     allowbookName: boolean = true;
-   
+    serverCreation = false;
+    servers = ['serverone', 'servertwo'];
 
     constructor() {
         setTimeout(() => {
@@ -28,6 +29,8 @@ export class ServersComponent implements OnInit {
     }
     onCreateServer(value) {
         console.log(value);
+        this.servers.push(this.serverName);
+        this.serverCreation = true;
         this.serverCreated = "A new server has been created:  " + this.serverName;
     }
     onInputSername(event: any) {
@@ -39,8 +42,8 @@ export class ServersComponent implements OnInit {
             this.allowbookName = false;
 
         }
-        else{
-            this.allowbookName=true;
+        else {
+            this.allowbookName = true;
         }
 
     }
